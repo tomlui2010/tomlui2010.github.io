@@ -27,6 +27,8 @@
   <component name="ChangeListManager">
     <list default="true" id="87848267-6c42-459b-b3df-5c7c56f9346d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/testimonials/t1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/testimonials/t2.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +56,7 @@
       <recent name="$PROJECT_DIR$/img/banner" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/img/testimonials" />
       <recent name="$PROJECT_DIR$/img/banner" />
     </key>
   </component>
