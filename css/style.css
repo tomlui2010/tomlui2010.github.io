@@ -2605,6 +2605,30 @@ h6 {
 
 /* End Brand Area css
 ============================================================================================ */
+/* Start Achievements Area css
+============================================================================================ */
+.achievements-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.achievements-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.achievements-list li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #854fee;
+}
+
+/* End Achievements Area css
+============================================================================================ */
 /* Start Portfolio Area css
 ============================================================================================ */
 .portfolio_area {
