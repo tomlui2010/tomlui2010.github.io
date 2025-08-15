@@ -2453,6 +2453,20 @@ h6 {
     @media (max-width: 991px) {
       .about_area .about_img {
         display: none; } }
+.about-content p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.highlight-text {
+  color: #854fee;
+  font-weight: 600;
+}
+
+.about-section {
+  max-width: 600px;
+  margin: 0 auto;
+}
 
 /* End About Us Area css
 ============================================================================================ */
