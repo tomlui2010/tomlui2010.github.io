@@ -37,7 +37,6 @@
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav justify-content-end">
 							<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-							<li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
 						</ul>
 					</div>
 				</div>
@@ -52,10 +51,9 @@
         <div class="banner_inner d-flex align-items-center">
             <div class="container">
                 <div class="banner_content text-center">
-                    <h2>Contact Us</h2>
+                    <h2>Let's Connect</h2>
                     <div class="page_link">
-                        <a href="index.html">Home</a>
-                        <a href="contact.html">Contact</a>
+                        <p class="text-white mt-3">Have a project in mind? I'd love to hear about it!</p>
                     </div>
                 </div>
             </div>
@@ -65,26 +63,72 @@
     
     <!--================Contact Area =================-->
     <section class="contact_area section_gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="contact_info">
-                        <div class="info_item">
-                            <i class="lnr lnr-home"></i>
-                            <h6>New South Wales, Australia</h6>
-                        </div>
-                        <div class="info_item">
-                            <i class="lnr lnr-phone-handset"></i>
-                            <h6><a href="#">+61-403732317</a></h6>
-                        </div>
-                        <div class="info_item">
-                            <i class="lnr lnr-envelope"></i>
-                            <h6><a href="#">tomlui2010@gmail.com</a></h6>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="contact_info">
+                    <div class="info_item">
+                        <i class="lnr lnr-home"></i>
+                        <h6>New South Wales, Australia</h6>
+                        <p>Available for remote work worldwide</p>
+                    </div>
+                    <div class="info_item">
+                        <i class="lnr lnr-phone-handset"></i>
+                        <h6><a href="tel:+61403732317">+61 403 732 317</a></h6>
+                        <p>Mon to Fri 9am to 6pm</p>
+                    </div>
+                    <div class="info_item">
+                        <i class="lnr lnr-envelope"></i>
+                        <h6><a href="mailto:tomlui2010@gmail.com">tomlui2010@gmail.com</a></h6>
+                        <p>Send me your query anytime!</p>
+                    </div>
+                    <div class="info_item mt-4">
+                        <div class="social_links">
+                            <h6>Professional Profiles</h6>
+                            <a href="https://www.linkedin.com/in/thomaslouisc/" target="_blank" class="btn btn-outline-primary btn-sm mr-2">
+                                <i class="fa fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="https://github.com/tomlui2010" target="_blank" class="btn btn-outline-dark btn-sm">
+                                <i class="fa fa-github"></i> GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="contact_form">
+                    <h3>Get In Touch</h3>
+                    <p class="mb-4">Interested in discussing a project or professional opportunity? I'd love to hear from you!</p>
+                    <form class="row contact_form" action="contact_process.php" method="post" id="contactForm">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" id="message" rows="6" placeholder="Message"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-right">
+                            <button type="submit" class="primary_btn">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
     <!--================Contact Area =================-->
         
         <!--================Footer Area =================-->
