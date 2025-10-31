@@ -16,6 +16,14 @@
 	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
 	<!-- main css -->
 	<link rel="stylesheet" href="css/style.css">
+	<style>
+		/* Reduce banner height on contact page while keeping background image/theme */
+		.banner_area .banner_inner { min-height: 160px; }
+		.banner_area .banner_content { padding: 16px 0; }
+		/* Remove gap between banner and contact section, center layout */
+		.contact_area.section_gap { padding-top: 0; }
+		.banner_area { margin-bottom: 0; }
+	</style>
 </head>
 
 <body>
@@ -66,8 +74,8 @@
     <!--================Contact Area =================-->
     <section class="contact_area section_gap">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-8 mb-4 mx-auto">
                 <div class="contact_info">
                     <div class="info_item">
                         <i class="lnr lnr-home"></i>
@@ -97,7 +105,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8">
+			<div class="col-12 col-lg-8 mx-auto">
                 <div class="contact_form">
                     <h3>Get In Touch</h3>
                     <p class="mb-4">Interested in discussing a project or professional opportunity? I'd love to hear from you!</p>

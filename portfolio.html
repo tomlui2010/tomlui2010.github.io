@@ -18,6 +18,30 @@
     <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css" />
     <!-- main css -->
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Banner size tweak for portfolio (keep theme background) */
+      #portfolio.banner_area .banner_inner { min-height: 160px; }
+      #portfolio .banner_content { padding: 16px 0; }
+
+      /* Netflix-like equal poster cards */
+      .portfolio_box { display: flex; flex-direction: column; height: 100%; border-radius: 14px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.08); transition: transform 160ms ease, box-shadow 160ms ease; background: #fff; }
+      .portfolio_box:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+      .portfolio_box .project-title { margin: 14px 12px 0; font-weight: 700; min-height: 44px; }
+      .single_portfolio { position: relative; height: 280px; }
+      @media (min-width: 992px) { .single_portfolio { height: 320px; } }
+      .single_portfolio img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .single_portfolio .overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.28), rgba(0,0,0,0)); opacity: 0; transition: opacity 160ms ease; }
+      .portfolio_box:hover .single_portfolio .overlay { opacity: 1; }
+
+      /* Spacing tuning */
+      .portfolio_area.section_gap { padding-top: 60px; padding-bottom: 60px; }
+
+      /* Sticky footer and smaller font */
+      html, body { height: 100%; }
+      body { display: flex; flex-direction: column; min-height: 100vh; }
+      .footer_area { margin-top: auto; font-size: 14px; }
+      .footer_area .footer-text { font-size: 12px; }
+    </style>
   </head>
 
   <body>
@@ -226,12 +250,8 @@
             </div>
           </div>
         </div>
-      </div>
     </section>
-    <br />
-    <br />
-    <br />
-    <br />
+    
     <!--================End Portfolio Area =================-->
 
     <!--================Footer Area =================-->
