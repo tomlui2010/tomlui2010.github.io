@@ -31,7 +31,8 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: #777777;
-  background: url(../img/body-bg.png) no-repeat center; }
+  background: url(../img/body-bg.png) no-repeat center;
+  }
 
 h1,
 h2,
@@ -215,7 +216,10 @@ button:focus {
   position: absolute;
   width: 100%;
   z-index: 9999;
-  background: #ffffff; }
+  background: url(../img/portfolio-bg.png) no-repeat left center;
+    background-size: contain;
+    height: 90px;
+  }
   .header_area .menu_nav {
     width: 100%; }
   .header_area .navbar {
@@ -223,9 +227,11 @@ button:focus {
     padding: 0px;
     border: 0px;
     border-radius: 0px;
-    width: 100%; }
+    width: 100%;
+    }
     .header_area .navbar .nav .nav-item {
-      margin-right: 45px; }
+      margin-right: 45px;
+      }
       .header_area .navbar .nav .nav-item .nav-link {
         font: 500 14px/100px "Rubik", sans-serif;
         text-transform: uppercase;
