@@ -216,9 +216,6 @@ button:focus {
   position: absolute;
   width: 100%;
   z-index: 9999;
-  background: url(../img/portfolio-bg.png) no-repeat left center;
-    background-size: contain;
-    height: 90px;
   }
   .header_area .menu_nav {
     width: 100%; }
@@ -3050,11 +3047,22 @@ h6 {
 
   /* Footer Area css
   ============================================================================================ */
-  .footer_area {
-    padding-top: 80px !important;
-    padding-bottom: 80px !important;
-    background-image: none !important;
-    background-color: #fcf8ff; }
+.footer_area {
+  padding: 120px 0;
+    position: relative;
+  }
+  
+  .footer_area:before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: #f9f9fd url(../img/portfolio-bg.png) no-repeat center top;
+    background-size: contain;
+    z-index: -1;
+  }
 
   /* Blog page Area css
   ============================================================================================ */
@@ -3311,7 +3319,8 @@ h6 {
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background: #f9f9fd;
+    background: #f9f9fd url(../img/portfolio-bg.png) no-repeat center top;
+      background-size: contain;
     z-index: -1; }
   @media (max-width: 1024px) {
     .footer_area {
