@@ -1,9 +1,0 @@
-:HL["/_next/static/chunks/132.gbgl4~4pm.css","style"]
-:HL["/css/bootstrap.css","style"]
-:HL["/vendors/linericon/style.css","style"]
-:HL["/css/font-awesome.min.css","style"]
-:HL["/vendors/owl-carousel/owl.carousel.min.css","style"]
-:HL["/css/magnific-popup.css","style"]
-:HL["/vendors/nice-select/css/nice-select.css","style"]
-:HL["/css/style.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"portfolio","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"PwHD819jRqHBNU4V6CZDL"}
