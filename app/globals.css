@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+/* Keep the legacy theme as the main source of truth for styling.
+   Tailwind preflight is still useful for new incremental UI work. */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
