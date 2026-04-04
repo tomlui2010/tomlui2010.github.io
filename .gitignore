@@ -24,6 +24,8 @@ pnpm-debug.log*
 # Coverage / reports
 coverage/
 
+img/.DS_Store
+
 # TypeScript / tooling caches
 *.tsbuildinfo
 .eslintcache
@@ -34,5 +36,6 @@ coverage/
 *.iml
 
 # OS metadata
+
 .DS_Store
 Thumbs.db
