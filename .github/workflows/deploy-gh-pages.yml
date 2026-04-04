@@ -5,6 +5,8 @@ on:
     branches:
       - master
       - main
+      - migrate/to_typescript
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -40,4 +42,3 @@ jobs:
           publish_dir: ./out
           publish_branch: gh-pages
           force_orphan: true
-
