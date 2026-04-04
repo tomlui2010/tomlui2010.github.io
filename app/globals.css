@@ -2,6 +2,10 @@
 
 /* Keep the legacy theme as the main source of truth for styling.
    Tailwind preflight is still useful for new incremental UI work. */
+:root {
+  --accent: #4458dc;
+}
+
 html,
 body {
   height: 100%;
@@ -11,3 +15,74 @@ body {
   margin: 0;
 }
 
+.ascii-site-header {
+  position: relative;
+  width: 100%;
+  padding: 28px 0 18px;
+  background:
+    radial-gradient(circle at top, rgba(133, 79, 238, 0.12), transparent 58%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.6));
+  overflow: hidden;
+}
+
+.ascii-site-header__container {
+  position: relative;
+}
+
+.ascii-home-banner .banner_inner {
+  padding-top: 72px;
+  padding-bottom: 80px;
+}
+
+.ascii-home-banner .banner_content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ascii-home-banner__summary {
+  max-width: 540px;
+  margin-bottom: 30px;
+}
+
+.ascii-home-banner__image {
+  display: flex;
+  justify-content: center;
+}
+
+.ascii-hero-mark {
+  width: 100%;
+  max-width: 100%;
+  min-height: 150px;
+  margin: 0;
+}
+
+.ascii-hero-canvas {
+  display: block;
+  max-width: 100%;
+  filter: drop-shadow(0 12px 28px rgba(68, 88, 220, 0.22));
+}
+
+@media (max-width: 991px) {
+  .ascii-site-header {
+    padding-top: 18px;
+    padding-bottom: 10px;
+  }
+
+  .ascii-home-banner .banner_inner {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .ascii-home-banner .banner_content {
+    margin-top: 0;
+  }
+
+  .ascii-home-banner__summary {
+    max-width: none;
+  }
+
+  .ascii-hero-mark {
+    min-height: 110px;
+  }
+}

@@ -36,3 +36,12 @@ export function readLegacyBodyHtml(fileName: LegacyHtmlFile) {
 
   return body.replace(/\r\n/g, "\n");
 }
+
+export function readLegacyBodyHtmlWithoutHomeBanner(fileName: LegacyHtmlFile) {
+  const body = readLegacyBodyHtml(fileName);
+
+  return body.replace(
+    /<section class="home_banner_area">[\s\S]*?<\/section>/i,
+    ""
+  );
+}
