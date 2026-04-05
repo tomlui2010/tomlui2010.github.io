@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import LegacyScriptLoader from "./components/legacy-script-loader";
 
 export const metadata: Metadata = {
   title: "Thomas Louis",
@@ -33,10 +32,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="/vendors/nice-select/css/nice-select.css" />
         <link rel="stylesheet" href="/css/style.css" />
       </head>
-      <body>
-        {children}
-        <LegacyScriptLoader />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

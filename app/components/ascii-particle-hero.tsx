@@ -46,17 +46,9 @@ export default function AsciiParticleHero({
   text = "THOMAS LOUIS",
 }: AsciiParticleHeroProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [mounted, setMounted] = useState(false);
+  const [showFallback, setShowFallback] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) {
-      return;
-    }
-
     const canvasElement = canvasRef.current;
     if (!canvasElement) {
       return;
@@ -68,13 +60,17 @@ export default function AsciiParticleHero({
     }
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setShowFallback(true);
       return;
     }
 
     const renderingContext = canvasElement.getContext("2d");
     if (!renderingContext) {
+      setShowFallback(true);
       return;
     }
+
+    setShowFallback(false);
 
     const canvas = canvasElement;
     const container = hostElement;
@@ -258,12 +254,13 @@ export default function AsciiParticleHero({
       return true;
     }
 
-    if (!rebuild()) {
-      return;
-    }
-
     let mouseX = -9999;
     let mouseY = -9999;
+    let animationFrameId = 0;
+    let startupFrameId = 0;
+    let started = false;
+    let destroyed = false;
+    let resizeObserver: ResizeObserver | null = null;
 
     const onMove = (event: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
@@ -299,7 +296,6 @@ export default function AsciiParticleHero({
       "#4458dc";
 
     const startTime = performance.now();
-    let animationFrameId = 0;
 
     function frame(now: number) {
       const elapsed = (now - startTime) / 1000;
@@ -377,33 +373,57 @@ export default function AsciiParticleHero({
       animationFrameId = requestAnimationFrame(frame);
     }
 
-    animationFrameId = requestAnimationFrame(frame);
-
     let resizeTimer: ReturnType<typeof setTimeout>;
     const onResize = () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        rebuild();
+        if (rebuild()) {
+          setShowFallback(false);
+        }
       }, 150);
     };
 
-    window.addEventListener("resize", onResize);
+    const startAnimation = () => {
+      if (destroyed || started) {
+        return;
+      }
+
+      if (!rebuild()) {
+        startupFrameId = requestAnimationFrame(startAnimation);
+        return;
+      }
+
+      started = true;
+      setShowFallback(false);
+      animationFrameId = requestAnimationFrame(frame);
+      window.addEventListener("resize", onResize);
+      resizeObserver = new ResizeObserver(() => {
+        onResize();
+      });
+      resizeObserver.observe(container);
+    };
+
+    startAnimation();
 
     return () => {
+      destroyed = true;
+      cancelAnimationFrame(startupFrameId);
       cancelAnimationFrame(animationFrameId);
       clearTimeout(resizeTimer);
       window.removeEventListener("resize", onResize);
+      resizeObserver?.disconnect();
       canvas.removeEventListener("mousemove", onMove);
       canvas.removeEventListener("mouseleave", onLeave);
       canvas.removeEventListener("touchstart", onTouchMove);
       canvas.removeEventListener("touchmove", onTouchMove);
       canvas.removeEventListener("touchend", onTouchEnd);
     };
-  }, [mounted, text]);
+  }, [text]);
 
   return (
-    <div className="ascii-hero-mark" aria-hidden="true">
+    <div className="ascii-hero-mark" aria-label={showFallback ? text : undefined}>
       <canvas ref={canvasRef} className="ascii-hero-canvas" />
+      {showFallback ? <span className="ascii-hero-fallback">{text}</span> : null}
     </div>
   );
 }

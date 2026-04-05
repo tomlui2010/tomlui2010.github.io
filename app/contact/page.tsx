@@ -1,6 +1,8 @@
 "use client";
 
-import { useMemo, useState, type FormEvent } from "react";
+import { useState, type FormEvent } from "react";
+import SiteFooter from "../components/site-footer";
+import SiteNav from "../components/site-nav";
 
 type ContactValues = {
   name: string;
@@ -11,17 +13,14 @@ type ContactValues = {
 
 type ContactErrors = Partial<Record<keyof ContactValues, string>>;
 
-export default function ContactPage() {
-  const styles = useMemo(
-    () => `
-      .banner_area .banner_inner { min-height: 160px; }
-      .banner_area .banner_content { padding: 16px 0; }
-      .contact_area.section_gap { padding-top: 0; }
-      .banner_area { margin-bottom: 0; }
-    `,
-    []
-  );
+const CONTACT_PAGE_STYLES = `
+  .banner_area .banner_inner { min-height: 160px; }
+  .banner_area .banner_content { padding: 16px 0; }
+  .contact_area.section_gap { padding-top: 0; }
+  .banner_area { margin-bottom: 0; }
+`;
 
+export default function ContactPage() {
   const [values, setValues] = useState<ContactValues>({
     name: "",
     email: "",
@@ -87,54 +86,11 @@ export default function ContactPage() {
     });
   };
 
-  const year = new Date().getUTCFullYear();
-
   return (
     <>
-      <style>{styles}</style>
+      <style>{CONTACT_PAGE_STYLES}</style>
 
-      <header className="header_area">
-        <div className="main_menu">
-          <nav className="navbar navbar-expand-lg navbar-light">
-            <div className="container">
-              <a className="navbar-brand logo_h" href="/">
-                <img src="/img/favicon.png" alt="" />
-              </a>
-              <a className="navbar-brand logo_h" href="/portfolio">
-                <img src="/img/favicon.png" alt="" />
-              </a>
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-              </button>
-
-              <div className="collapse navbar-collapse offset" id="navbarSupportedContent">
-                <ul className="nav navbar-nav menu_nav justify-content-end">
-                  <li className="nav-item">
-                    <a className="nav-link" href="/">
-                      Home
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a className="nav-link" href="/portfolio">
-                      Portfolio
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </header>
+      <SiteNav currentPath="/contact" />
 
       <section className="banner_area">
         <div className="banner_inner d-flex align-items-center">
@@ -325,58 +281,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      <footer className="footer_area">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-12">
-              <div className="footer_top flex-column">
-                <div className="footer_logo">
-                  <a href="#">
-                    <img src="/img/logo.png" alt="" />
-                  </a>
-                  <h4>Follow Me</h4>
-                </div>
-                <div className="footer_social">
-                  <a href="https://www.facebook.com/thomas.louis.925">
-                    <i className="fa fa-facebook"></i>
-                  </a>
-                  <a href="https://twitter.com/tomlui2010">
-                    <i className="fa fa-twitter"></i>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/thomaslouisc/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i className="fa fa-linkedin"></i>
-                  </a>
-                  <a
-                    href="https://github.com/tomlui2010"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <i className="fa fa-github"></i>
-                  </a>
-                  <a href="mailto:tomlui2010@gmail.com" target="_blank" rel="noreferrer">
-                    <i className="fa fa-google"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="row footer_bottom justify-content-center">
-            <p className="col-lg-8 col-sm-12 footer-text">
-              Copyright &copy;{year} All rights reserved | This template is made with{" "}
-              <i className="fa fa-heart-o" aria-hidden="true"></i> by{" "}
-              <a href="https://colorlib.com" target="_blank" rel="noreferrer">
-                Colorlib
-              </a>
-            </p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
