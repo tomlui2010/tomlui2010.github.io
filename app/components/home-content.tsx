@@ -1,3 +1,5 @@
+import TestimonialsCarousel, { type Testimonial } from "./testimonials-carousel";
+
 const EXPERTISE_ITEMS = [
   {
     image: "/img/services/s1.png",
@@ -21,7 +23,7 @@ const EXPERTISE_ITEMS = [
   },
 ] as const;
 
-const TESTIMONIALS = [
+const TESTIMONIALS: Testimonial[] = [
   {
     image: "/img/testimonials/VinayRao.jpeg",
     name: "Vinay Rao",
@@ -136,25 +138,7 @@ export default function HomeContent() {
             </div>
           </div>
 
-          <div className="row tl-testimonials">
-            {TESTIMONIALS.map((testimonial) => (
-              <div key={testimonial.name} className="col-lg-6">
-                <article className="testi_item tl-testimonials__card">
-                  <div className="row align-items-center">
-                    <div className="col-sm-4">
-                      <img src={testimonial.image} alt={testimonial.name} />
-                    </div>
-                    <div className="col-sm-8">
-                      <div className="testi_text">
-                        <h4>{testimonial.name}</h4>
-                        <p>{testimonial.quote}</p>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            ))}
-          </div>
+          <TestimonialsCarousel testimonials={TESTIMONIALS} />
         </div>
       </section>
     </>
