@@ -1,3 +1,4 @@
+import ArtifipediaEmbed from "./artifipedia-embed";
 import TestimonialsCarousel, { type Testimonial } from "./testimonials-carousel";
 
 const EXPERTISE_ITEMS = [
@@ -126,6 +127,8 @@ export default function HomeContent() {
           </div>
         </div>
       </section>
+
+      <ArtifipediaEmbed />
 
       <section className="testimonial_area section_gap_bottom">
         <div className="container">
